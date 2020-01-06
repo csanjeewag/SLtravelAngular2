@@ -16,8 +16,10 @@ export class HomepageComponent implements OnInit {
   public Imageurl = this.repository.Image_Url;
   public selectedtype;
   public Backurl = this.repository.Back_Url;
+  public filtertext;
   ngOnInit() {
     this.selectedtype='';
+    this.filtertext = '';
     this.getall()
     this.getalltypes()
   }

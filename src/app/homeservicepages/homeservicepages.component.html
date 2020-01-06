@@ -89,11 +89,11 @@
     <!-- Section heading -->
    
     <!-- Section description -->
-    <p class="text-left dark-grey-text w-responsive mx-auto mb-3">{{re.para1 | slice:0:400}} ...</p>
+   
   
     <!-- Grid row -->
     <div class="row" *ngFor="let re of result | filter: filtertext">
-  
+      <p class="text-left dark-grey-text w-responsive mx-auto mb-3">{{re.para1 | slice:0:400}} ...</p>
       <!-- Grid column -->
       <div class="col-lg-4 col-xl-3">
   

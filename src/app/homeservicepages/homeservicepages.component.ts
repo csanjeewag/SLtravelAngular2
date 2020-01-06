@@ -18,20 +18,23 @@
     public Imageurl = this.repository.Image_Url;
     public selectedtype;
     public Backurl = this.repository.Back_Url;
+    public filtertext;
     ngOnInit() {
-      this.selectedtype = ''
+      this.selectedtype = '';
+      this.filtertext='';
       this.getall()
       this.getalltypes()
     }
   
     public getall(){
-
+      
       let type =  this.route.snapshot.queryParamMap.get('type')
       let url ;
       if(type){ url = 'getallservicepages/?'+'type='+type; }else{  url=  'getallservicepages/?'+'type='}
 
       this.result = this.repository.getData(url).subscribe(res=>{
         this.result = res as JSON;
+       
   
       },   (error => {
         //this.message="Registration Failed, Try Again!";
