@@ -1,0 +1,245 @@
+<div *ngIf="!(result)" style=" height: 35rem;">
+  <div class="text-center " style="position:relative; top:50%" >
+    <div class="spinner-border text-primary" role="status" style="width: 5rem; height: 5rem;">
+      <span class="sr-only">Loading...</span>
+      
+    </div>
+    <p class="text-primary">Loading..</p>
+  </div>
+</div>
+<div *ngIf="(result)">
+
+<div *ngIf="result">
+<!-- Section: Blog v.1 -->
+
+<section class="my-5 col-lg-8 col-md-10 col-sm-12 container">
+    <h2 class="h1-responsive font-weight-bold text-left my-5"><i class="fas fa-suitcase pr-2"></i>{{result.subtopic}}</h2>
+    <div class="row">
+        <div class="col-md-12">
+          <!--Featured image-->
+          <mdb-card >
+        
+              <mdb-carousel  class="carousel slide carousel-fade" [animation]="'fade'" >
+                  <mdb-carousel-item id="backimg" *ngFor="let url of result.image_url">
+                    <img class="img-fluid" id="slidepic" class="d-block w-100" [src]="Imageurl+url"  alt="slide">
+                  </mdb-carousel-item>
+                  <!-- <mdb-carousel-item>
+                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide">
+                  </mdb-carousel-item>
+                  <mdb-carousel-item>
+                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide">
+                  </mdb-carousel-item> -->
+                </mdb-carousel>
+            
+    
+            <!--Post data-->
+            <mdb-card-body cascade="true" class="text-right">
+                <div class="row">
+                    <div class="col-6 text-left">
+                        <h4 class="h4-responsive" >
+                            <a class="font-weight-bold">{{result.location.city}},</a>  <a class="font-weight-bold">{{result.location.address}}</a>
+                          </h4>
+                        <h3 class="h3-responsive" >
+                            <a class="font-weight-bold">{{result.location.dictrict}}</a>
+                          </h3>
+                    </div>
+                    <div class="col-6 text-right">
+                        <h3 class="h3-responsive">
+                            <a class="font-weight-bold">{{result.type}}</a>
+                          </h3>
+                          <p>Written by
+                            <a>{{result.username}}</a>, {{result.updated_at | date}}</p>
+                    </div>
+                </div>
+              <!--Social shares-->
+            </mdb-card-body>
+            <!--Post data-->
+          </mdb-card>
+    
+          <!--Excerpt-->
+          <div class="excerpt mt-5">
+            <p>{{result.para1}}
+            </p>
+    
+            <p>{{result.para2}}
+            </p>
+            <p>{{result.para3}}
+              </p>
+          </div>
+        </div>
+      </div>
+
+  <!-- Section heading -->
+
+  <!-- Section description -->
+
+  <hr class="my-5">
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-lg-5">
+
+      <!-- Featured image -->
+      <div  class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light" mdbWavesEffect>
+        <img *ngIf="result.read1.img"  class="img-fluid" [src]="Imageurl+result.read1.img" alt="Sample image">
+        <img  *ngIf="!(result.read1.img)" class="img-fluid" [src]="Imageurl+result.p1" alt="Sample image">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-7">
+
+      <!-- Category -->
+     
+      <!-- Post title -->
+      <h5 class="font-weight-bold mb-3"><strong>{{result.read1.topic}}</strong></h5>
+      <!-- Excerpt -->
+      <p>{{result.read1.para}}</p>
+      <!-- Post data -->
+      <!-- <p>by <a><strong>Carine Fox</strong></a>, 19/08/2018</p> -->
+      <!-- Read more button -->
+     
+
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+
+  <hr class="my-5">
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-lg-7">
+
+      <!-- Category -->
+     
+      <!-- Post title -->
+      <h5 class="font-weight-bold mb-3"><strong>{{result.read2.topic}}</strong></h5>
+      <!-- Excerpt -->
+      <p>{{result.read2.para}}</p>
+      <!-- Post data -->
+      <!-- <p>by <a><strong>Carine Fox</strong></a>, 14/08/2018</p> -->
+      <!-- Read more button -->
+     
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-5">
+
+      <!-- Featured image -->
+      <div  class="view overlay rounded z-depth-2 waves-light" mdbWavesEffect>
+        <img *ngIf="(result.read2.img)" class="img-fluid" [src]="Imageurl+result.read2.img"  alt="Sample image">
+        <img  *ngIf="!(result.read2.img)" class="img-fluid" [src]="Imageurl+result.p2" alt="Sample image">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+
+  <hr class="my-5">
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-lg-5">
+
+      <!-- Featured image -->
+      <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4 waves-light" mdbWavesEffect>
+        <img *ngIf="(result.read3.img)" class="img-fluid" [src]="Imageurl+result.read3.img" alt="Sample image">
+        <img  *ngIf="!(result.read3.img)" class="img-fluid" [src]="Imageurl+result.p3" alt="Sample image">
+        <a>
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-lg-7">
+
+      <!-- Category -->
+     
+      <!-- Post title -->
+      <h5 class="font-weight-bold mb-3"><strong>{{result.read3.topic}}</strong></h5>
+      <!-- Excerpt -->
+      <p>{{result.read3.para}}</p>
+      <!-- Post data -->
+      <!-- <p>by <a><strong>Carine Fox</strong></a>, 11/08/2018</p> -->
+      <!-- Read more button -->
+ 
+
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+
+  <!--------------------------------recent pages------------------------------------------------------>
+  <div *ngIf="servicepages">
+<h4 class="h3-responsive font-weight-bold text-left my-5"><i class="fas fa-suitcase pr-2"></i> relative services</h4>
+<!-- Grid row -->
+<div class="row" *ngFor="let re of servicepages" >
+
+<div class="col-lg-2 col-xl-2">
+
+<!-- Featured image -->
+
+   <div (click)="viewtravelpage(re[0]._id)" class="view overlay rounded z-depth-1 waves-light" mdbWavesEffect>
+       <img  [src]="Imageurl+re[0].image_url[1]" class="img-fluid" alt="Sample project image">
+ <a>
+   <div class="mask rgba-white-slight"></div>
+ </a>
+</div>
+
+</div>
+<!-- Grid column -->
+
+<!-- Grid column -->
+<div class="col-lg-8 col-xl-8">
+
+<!-- Post title -->
+<h5 class="mb-1"><strong class="font-weight-bold ">{{re[0].topic}}</strong> 
+  &nbsp;&nbsp;
+  <i class="fas fa-angle-double-right"></i>
+  
+  <!-- <i class="fas fa-align-right"></i> -->
+  &nbsp;&nbsp;
+  <a class="text-right">{{re[0].type}}</a> </h5>
+<!-- Excerpt -->
+<p class="dark-grey-text">{{re[0].para1 | slice:0:100}} ... 
+ from <a class="font-weight-bold">{{re[0].location.dictrict}}</a>, {{re[0].location.city}}</p>
+<!-- Post data -->
+<p></p>
+<!-- Read more button -->
+
+<hr class="my-2">
+
+</div>
+<!-- Grid column -->
+
+</div>
+</div>
+ <!-- Grid row -->
+<!-----------------------------------recent page------------------------>
+
+</section>
+<!-- Section: Blog v.1 -->
+</div>

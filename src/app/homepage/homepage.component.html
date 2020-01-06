@@ -1,0 +1,147 @@
+<div *ngIf="!(result)" style=" height: 35rem;">
+  <div class="text-center " style="position:relative; top:50%" >
+    <div class="spinner-border text-primary" role="status" style="width: 5rem; height: 5rem;">
+      <span class="sr-only">Loading...</span>
+      
+    </div>
+    <p class="text-primary">Loading..</p>
+  </div>
+</div>
+<div *ngIf="(result)">
+<!--Carousel Wrapper-->
+<mdb-carousel [isControls]="true" class="carousel slide carousel-fade" [animation]="'fade'">
+    <h1 id="topic" class="text-center text-white h1 py-5">
+        <strong  style="  font-family: 'Zapf-Chancery', cursive;"> MOST BEAUTIFUL PLACES IN SRI LANKA</strong>
+      </h1>
+    <!--First slide-->
+    <mdb-carousel-item id="backimg">
+      <div class="view w-100">
+        <img  class="d-block w-100" [src]="Backurl+'back6.jpg'"  alt="First slide">
+        <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive text-right">Grow wild according to thy nature, like these sedges and brakes,
+           which will never become English bay.</h3>
+        <p></p>
+      </div>
+    </mdb-carousel-item>
+    <!--/First slide-->
+    <!--Second slide-->
+    <mdb-carousel-item id="backimg">
+      <div class="view w-100">
+        <img class="d-block w-100" [src]="Backurl+'back3.jpg'" alt="Second slide">
+        <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive text-right">The tourists were left below and Dean 
+          was alone save the sounds of nature on the rocky rutted path as his Jeep's tires clawed upward.</h3>
+        <p></p>
+      </div>
+    </mdb-carousel-item>
+    <!--/Second slide-->
+    <!--Third slide-->
+    <mdb-carousel-item id="backimg">
+      <div class="view w-100">
+        <img class="d-block w-100" [src]="Backurl+'back5.jpg'"  alt="Third slide">
+        <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive text-right">"I am thinking how very busy dear Mother Nature is in the springtime," she replied.</h3>
+        <p></p>
+      </div>
+    </mdb-carousel-item>
+    <!--/Third slide-->
+  </mdb-carousel>
+  <!--/.Carousel Wrapper-->
+<!--Projects section v.1-->
+<section>
+
+  
+    <!--Section heading-->
+  
+  
+    <!--Section description-->
+    <p class="grey-text pb-5 text-left"></p>
+    <div class="row ">
+        <h2 class="h1-responsive font-weight-bold text-left pl-5 col-lg-8">Destination of SriLanka</h2> 
+        <!-- Search form -->
+ 
+    </div>
+  
+  <div class="row">
+    <div class="col-lg-4 col-sm-11 container"> 
+      <!-- <a href="/?type" class="list-group-item active waves-light" mdbWavesEffect>
+          selete types
+        </a> -->
+        <form class="form-inline waves-light col-lg-4" mdbWavesEffect>
+          <div class="md-form mt-0">
+       
+            <input   [value]="filtertext" (input)="filtertext = $event.target.value" class="form-control " type="text" placeholder="Search" >
+          </div>
+    
+        </form>
+      <div class="list-group" >
+        <a (click)="selecttype('')" [class.active] ="selectedtype==''"  class="list-group-item waves-light" mdbWavesEffect> <mdb-icon fas icon="award"  ></mdb-icon>select all type</a>
+         
+          <a [class.active] ="selectedtype==type" (click)="selecttype(type)" *ngFor="let type of types.type" class="list-group-item waves-light" mdbWavesEffect> <mdb-icon fas icon="award"  ></mdb-icon>{{type}}</a>
+         
+        </div>
+  </div>
+  <div class="col-lg-7 col-sm-11 container">
+    <!--Grid row-->
+    <div class="row text-center">
+  
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-12 mb-4" *ngFor="let re of result| filter: filtertext">
+  
+        <!--Featured image-->
+        <div (click)="viewtravelpage(re.subtopic)" class="view overlay rounded z-depth-1 waves-light" mdbWavesEffect>
+          <img  [src]="Imageurl+re.image_url[0]" class="img-fluid" alt="Sample project image">
+          <a>
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+  
+        <!--Excerpt-->
+        <mdb-card-body class="mt-3">
+          <h4>
+            <strong>{{re.topic}}</strong>
+          </h4>
+          <p>
+              {{re.location.city}},{{re.location.dictrict}}
+          </p>
+          <p class="blue-text text-left">{{re.para1 | slice:0:200}} ...
+          </p>
+          <a mdbBtn color="indigo" size="sm" class="waves-light" (click)="viewtravelpage(re.subtopic)" mdbWavesEffect>
+            <i class="far fa-clone left"></i> View destination</a>
+        </mdb-card-body>
+  
+      </div>
+      <!--Grid column-->
+  
+
+  
+    </div>
+  </div>
+
+
+
+
+
+</div>
+    <!--Grid row-->
+
+
+
+
+
+
+
+
+    <hr>
+    <!-- Section: Blog v.3 -->
+
+  
+  </section>
+  <!--/Projects section v.1-->
+</div>

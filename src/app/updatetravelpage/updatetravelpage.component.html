@@ -1,0 +1,450 @@
+
+ <section class="contact-section my-5">
+ 
+     <form [formGroup]="Form" enctype="multipart/form-data" autocomplete="off" novalidate (ngSubmit)="sendform(Form.value)">
+     <!-- Form with header -->
+     <div class="card">
+   
+       <!-- Grid row -->
+       <div class="row">
+         
+         <!-- Grid column -->
+         <div class="col-lg-8 container">
+   
+           <div class="card-body form">
+   
+             <!-- Header -->
+             <h3 class="mt-4"><i class="fas fa-envelope pr-2"></i>Update service page:</h3>
+   
+             <!-- Grid row -->
+             <div class="row">
+   
+               <!-- Grid column -->
+               <div class="col-md-6">
+                 <div class="md-form mb-0">
+                   <input type="text" id="form-contact-name"  class="form-control" mdbInput formControlName="topic">
+                   <label for="form-contact-name" class="">topic</label>
+                 </div>
+               </div>
+               <!-- Grid column -->
+   
+               <!-- Grid column -->
+               <div class="col-md-6">
+                 <div class="md-form mb-0">
+                   <input type="text" id="form-contact-name"  class="form-control" mdbInput formControlName="subtopic">
+                   <label for="form-contact-name" class="">sub topic</label>
+                 </div>
+               </div>
+               <!-- Grid column -->
+   
+             </div>
+             <!-- Grid row -->
+ 
+             <div class="row">
+   
+                 <!-- Grid column -->
+                 <div class="col-md-6">
+                   <div class="md-form mb-0">
+                     <!-- <input type="text" id="form-contact-name"  class="form-control" mdbInput formControlName="type"> -->
+                     <select class="browser-default custom-select" formControlName="type">
+                         <option selected>Open this select menu</option>
+                         <option value={{type}} *ngFor="let type of types.type">{{type}}</option>
+                       
+                       </select>
+                     <label for="form-contact-name" class="">type</label>
+                   </div>
+                 </div>
+                 <!-- Grid column -->
+     
+                 <!-- Grid column -->
+                 <div class="col-md-6">
+                   <div class="md-form mb-0">
+                   </div>
+                 </div>
+                 <!-- Grid column -->
+     
+               </div>
+               <!-- Grid row -->
+   
+             <!-- Grid row -->
+             <div class="row">
+   
+               <!-- Grid column -->
+               <div class="col-md-6">
+                 <div class="md-form mb-0">
+                   <input type="text" id="form-contact-name"  class="form-control" mdbInput formControlName="dictrict">
+                   <label for="form-contact-name" class="">dictrict</label>
+                 </div>
+               </div>
+               <!-- Grid column -->
+   
+               <!-- Grid column -->
+               <div class="col-md-6">
+                 <div class="md-form mb-0">
+                   <input type="text" id="form-contact-name"  class="form-control" mdbInput formControlName="city">
+                   <label for="form-contact-name" class="">city</label>
+                 </div>
+               </div>
+               <!-- Grid column -->
+   
+             </div>
+             <!-- Grid row -->
+   
+             <!-- Grid row -->
+             <div class="row">
+   
+               <!-- Grid column -->
+               <div class="col-md-12">
+                 <div class="md-form mb-0">
+                   <textarea type="text" id="form-contact-message" class="form-control md-textarea" rows="3"
+                     mdbInput formControlName="para1"></textarea>
+                   <label for="form-contact-message">paragraph 1</label>
+                  
+                 </div>
+               </div>
+               <!-- Grid column -->
+   
+             </div>
+             <!-- Grid row -->
+   
+                 <!-- Grid row -->
+                 <div class="row">
+   
+                   <!-- Grid column -->
+                   <div class="col-md-12">
+                     <div class="md-form mb-0">
+                       <textarea type="text" id="form-contact-message" class="form-control md-textarea" rows="3"
+                         mdbInput formControlName="para2"></textarea>
+                       <label for="form-contact-message">paragraph 2</label>
+                       
+                     </div>
+                   </div>
+                   <!-- Grid column -->
+       
+                 </div>
+                 <!-- Grid row -->
+                     <!-- Grid row -->
+             <div class="row">
+   
+               <!-- Grid column -->
+               <div class="col-md-12">
+                 <div class="md-form mb-0">
+                   <textarea type="text" id="form-contact-message" class="form-control md-textarea" rows="3"
+                     mdbInput formControlName="para3"></textarea>
+                   <label for="form-contact-message">paragraph 3</label>
+                  
+                 </div>
+               </div>
+               <!-- Grid column -->
+   
+             </div>
+             <!-- Grid row -->
+ 
+              <!-- Grid row -->
+              <div class="row">
+   
+               <!-- Grid column -->
+               <div class="col-md-6">
+                 <div class="md-form mb-0">
+                   <input type="text" id="form-contact-name"  class="form-control" mdbInput formControlName="read1_tpoic">
+                   <label for="form-contact-name" class="">small topic 1</label>
+                 </div>
+                 <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                  </div>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="onFileChange($event.target.files,'1')"
+                      aria-describedby="inputGroupFileAddon01">
+                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                  </div>
+                </div>
+
+                 <div class="md-form mb-0">
+                     
+                    
+                     
+                     <img  style=" height:150px" *ngIf="ImageUrls[1]" [src]="ImageUrls[1]" id="icon" alt="User Icon">
+                     <!-- <img  class="img-fluid" style=" height:150px" [src]="Imageurl+page.read1.img" alt="Sample image"> -->
+                     <img *ngIf="!(ImageUrls[1])"   class="img-fluid" style=" height:150px" [src]="Imageurl+page.p1" alt="Sample image">
+                
+                   </div>
+               </div>
+               <!-- Grid column -->
+   
+               <!-- Grid column -->
+               <div class="col-md-6">
+                 <div class="md-form mb-0">
+                   <textarea type="text" id="form-contact-message" class="form-control md-textarea" rows="3"
+                     mdbInput formControlName="read1_para"></textarea>
+                   <label for="form-contact-message">paragraph</label>
+                   
+                 </div>
+               </div>
+               <!-- Grid column -->
+   
+             </div>
+             <!-- Grid row -->
+                 <!-- Grid row -->
+                 <div class="row">
+   
+                   <!-- Grid column -->
+                   <div class="col-md-6">
+                     <div class="md-form mb-0">
+                       <input type="text" id="form-contact-name"  class="form-control" mdbInput formControlName="read2_tpoic">
+                       <label for="form-contact-name" class="">small topic 2</label>
+                     </div>
+                     <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                      </div>
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="onFileChange($event.target.files,'2')"
+                          aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                      </div>
+                    </div>
+    
+                     <div class="md-form mb-0">
+                     
+                        
+                         <!-- <img style=" height:150px" *ngIf="ImageUrls[2]" [src]="ImageUrls[2]" id="icon" alt="User Icon">
+                         <img *ngIf="!(ImageUrls[2])"   class="img-fluid" style=" height:150px" [src]="Imageurl+page.p2" alt="Sample image"> -->
+                         <img  style=" height:150px" *ngIf="ImageUrls[2]" [src]="ImageUrls[2]" id="icon" alt="User Icon">
+                     <img *ngIf="!(ImageUrls[2])"   class="img-fluid" style=" height:150px" [src]="Imageurl+page.p2" alt="Sample image">
+                         
+                       </div>
+                   </div>
+                   <!-- Grid column -->
+       
+                   <!-- Grid column -->
+                   <div class="col-md-6">
+                     <div class="md-form mb-0">
+                       <textarea type="text" id="form-contact-message" class="form-control md-textarea" rows="3"
+                         mdbInput formControlName="read2_para"></textarea>
+                       <label for="form-contact-message">paragraph</label>
+                       
+                     </div>
+ 
+                   </div>
+                   <!-- Grid column -->
+       
+                 </div>
+                 <!-- Grid row -->
+                     <!-- Grid row -->
+              <div class="row">
+   
+               <!-- Grid column -->
+               <div class="col-md-6">
+                 <div class="md-form mb-0">
+                   <input type="text" id="form-contact-name"  class="form-control" mdbInput formControlName="read3_tpoic">
+                   <label for="form-contact-name" class="">small topic 3</label>
+                 </div>
+                 <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                  </div>
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="onFileChange($event.target.files,'3')"
+                      aria-describedby="inputGroupFileAddon01">
+                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                  </div>
+                </div>
+
+                 <div class="md-form mb-0">
+                     
+                 
+                     <img style=" height:150px" *ngIf="ImageUrls[3]" [src]="ImageUrls[3]" id="icon" alt="User Icon">
+                     <img *ngIf="!(ImageUrls[3])"   class="img-fluid" style=" height:150px" [src]="Imageurl+page.p3" alt="Sample image">
+                   
+                   </div>
+               </div>
+               <!-- Grid column -->
+   
+               <!-- Grid column -->
+               <div class="col-md-6">
+                 <div class="md-form mb-0">
+                   <textarea type="text" id="form-contact-message" class="form-control md-textarea" rows="3"
+                     mdbInput formControlName="read3_para"></textarea>
+                   <label for="form-contact-message">paragraph</label>
+                   
+                 </div>
+               </div>
+               <!-- Grid column -->
+              
+   
+             </div>
+ 
+             <div class="row">
+   
+                           <!-- Grid column -->
+                
+                           <div class="col-md-6">
+                 
+                            <div class="input-group">
+                             <div class="input-group-prepend">
+                               <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                             </div>
+                             <div class="custom-file">
+                               <input type="file" class="custom-file-input" id="inputGroupFile01" onchange="readURL(this);" 
+                               multiple accept="image/*" (change)="onFileChanges($event.target.files)"
+                                 aria-describedby="inputGroupFileAddon01">
+                               <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                             </div>
+                           </div>
+                          
+                          </div>
+                          <!-- Grid column -->
+                         <!-- Grid column -->
+                         <div class="col-md-6">
+                          <div class="md-form mb-0">
+                              <img style=" height:200px" *ngIf="ImageUrl" [src]="ImageUrl" id="icon" alt="User Icon">
+                            
+                          </div>
+                        </div>
+                        <!-- Grid column -->
+     
+               </div>
+
+<!-----------------------------------------------add service places---------------------------------------------------------------------->
+
+      <!-- Grid row -->
+      <div class="row">
+   
+          <!-- Grid column -->
+          <div class="col-md-12">
+              <div class="md-form mb-0">
+                  <!-- <input type="text" id="form-contact-name"  class="form-control" mdbInput formControlName="type"> -->
+                  <select class="browser-default custom-select" formControlName="sp1">
+                      <option value={{page._id}} *ngFor="let page of servicepages">{{page.subtopic}}, dictrict :{{page.location.dictrict}}</option>
+                    
+                    </select>
+                  <label for="form-contact-name" class="">service page 1</label>
+                </div>
+          </div>
+
+        </div>
+        <!-- Grid row -->
+
+              <!-- Grid row -->
+              <div class="row">
+   
+                  <!-- Grid column -->
+                  <div class="col-md-12">
+                      <div class="md-form mb-0">
+                          <!-- <input type="text" id="form-contact-name"  class="form-control" mdbInput formControlName="type"> -->
+                          <select class="browser-default custom-select" formControlName="sp2">
+                              <option value={{page._id}} *ngFor="let page of servicepages">{{page.subtopic}}, dictrict :{{page.location.dictrict}}</option>
+                            
+                            </select>
+                          <label for="form-contact-name" class="">service page 2</label>
+                        </div>
+                  </div>
+        
+                </div>
+        <!-- Grid row -->
+
+              <!-- Grid row -->
+              <div class="row">
+   
+                  <!-- Grid column -->
+                  <div class="col-md-12">
+                      <div class="md-form mb-0">
+                          <!-- <input type="text" id="form-contact-name"  class="form-control" mdbInput formControlName="type"> -->
+                          <select class="browser-default custom-select" formControlName="sp3">
+                              <option value={{page._id}} *ngFor="let page of servicepages">{{page.subtopic}}, dictrict :{{page.location.dictrict}}</option>
+                            
+                            </select>
+                          <label for="form-contact-name" class="">service page 3</label>
+                        </div>
+                  </div>
+        
+                </div>
+        <!-- Grid row -->
+
+                    <!-- Grid row -->
+              <div class="row">
+   
+                  <!-- Grid column -->
+                  <div class="col-md-12">
+                      <div class="md-form mb-0">
+                          <!-- <input type="text" id="form-contact-name"  class="form-control" mdbInput formControlName="type"> -->
+                          <select class="browser-default custom-select" formControlName="sp4">
+                              <option value={{page._id}} *ngFor="let page of servicepages">{{page.subtopic}}, dictrict :{{page.location.dictrict}}</option>
+                            
+                            </select>
+                          <label for="form-contact-name" class="">service page 4</label>
+                        </div>
+                  </div>
+        
+                </div>
+        <!-- Grid row -->
+
+                    <!-- Grid row -->
+                    <div class="row">
+   
+                        <!-- Grid column -->
+                        <div class="col-md-12">
+                            <div class="md-form mb-0">
+                                <!-- <input type="text" id="form-contact-name"  class="form-control" mdbInput formControlName="type"> -->
+                                <select class="browser-default custom-select" formControlName="sp5">
+                                    <option value={{page._id}} *ngFor="let page of servicepages">{{page.subtopic}}, dictrict :{{page.location.dictrict}}</option>
+                                  
+                                  </select>
+                                <label for="form-contact-name" class="">service page 5</label>
+                              </div>
+                        </div>
+              
+                      </div>
+              <!-- Grid row -->
+      
+                    <!-- Grid row -->
+                    <div class="row">
+   
+                        <!-- Grid column -->
+                        <div class="col-md-12">
+                            <div class="md-form mb-0">
+                                <!-- <input type="text" id="form-contact-name"  class="form-control" mdbInput formControlName="type"> -->
+                                <select class="browser-default custom-select" formControlName="sp6">
+                                    <option value={{page._id}} *ngFor="let page of servicepages">{{page.subtopic}}, dictrict :{{page.location.dictrict}}</option>
+                                  
+                                  </select>
+                                <label for="form-contact-name" class="">service page 6</label>
+                              </div>
+                        </div>
+              
+                      </div>
+              <!-- Grid row -->
+      
+           
+      
+                  
+<!---------------------------------------------------------------------------------------------------------------------->
+
+               <br><br>
+               
+             
+             <button type="submit" class="btn" mdbBtn floating="true" size="lg" color="blue" mdbWavesEffect>
+               <i class="far fa-paper-plane"> submit</i>
+             </button>
+             <!-- Grid row -->
+           </div>
+         
+           <br>
+         </div>
+         <!-- Grid column -->
+   
+         <!-- Grid column -->
+         
+         <!-- Grid column -->
+   
+       </div>
+       <!-- Grid row -->
+   
+     </div>
+     
+     <!-- Form with header -->
+   </form>
+   </section>
+ 
+ 
